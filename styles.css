@@ -306,8 +306,10 @@ h1 span {
 
 .commands-link {
   display: flex;
+  flex: 1 1 auto;
   flex-direction: column;
   margin: 0 14px 12px;
+  min-height: 250px;
   border: 3px solid rgba(126, 217, 87, 0.75);
   border-radius: 0;
   background: linear-gradient(180deg, rgba(14, 19, 15, 0.98), rgba(8, 11, 10, 0.98));
@@ -326,7 +328,9 @@ h1 span {
 .commands-link img {
   display: block;
   width: 100%;
-  height: 150px;
+  flex: 1 1 auto;
+  min-height: 200px;
+  height: 100%;
   object-fit: cover;
   background: #0b100d;
   filter: saturate(1.2) contrast(1.08);

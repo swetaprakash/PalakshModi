@@ -23,7 +23,8 @@ body {
 a { color: inherit; }
 .site-shell {
   position: relative;
-  width: min(100% - 64px, 1440px);
+  width: 100%;
+  max-width: none;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -153,28 +154,123 @@ h1 span {
   transition: width .2s ease;
 }
 .scroll-cue:hover .scroll-line { width: 40px; }
+.commands-nav {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  width: min(100%, 1200px);
+  margin: 8px auto 12px;
+}
+
+.carousel-btn {
+  border: 1px solid rgba(126, 217, 87, 0.35);
+  background: rgba(20, 26, 18, 0.8);
+  color: #dfffdc;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.carousel-btn:hover {
+  transform: translateY(-1px);
+  border-color: rgba(126, 217, 87, 0.7);
+  background: rgba(39, 52, 34, 0.9);
+}
+
 .commands-carousel {
   position: relative;
   z-index: 1;
   display: flex;
   gap: 18px;
-  width: min(100%, 1200px);
-  margin: 18px auto 40px;
-  padding: 8px 0 12px;
+  width: 100%;
+  margin: 0 auto 40px;
+  padding: 8px 24px 12px;
   overflow-x: auto;
   scroll-snap-type: x proximity;
   scrollbar-width: thin;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.commands-carousel::-webkit-scrollbar {
+  height: 8px;
+}
+
+.commands-carousel::-webkit-scrollbar-thumb {
+  background: rgba(126, 217, 87, 0.5);
+  border-radius: 10px;
 }
 
 .commands-panel {
   position: relative;
-  flex: 0 0 420px;
+  flex: 0 0 calc((100% - 36px) / 3);
+  width: calc((100% - 36px) / 3);
+  aspect-ratio: 1 / 1;
   scroll-snap-align: start;
-  min-height: 220px;
-  padding: 20px 22px 12px;
+  min-height: 0;
+  height: auto;
+  padding: 0;
   border: 1px solid rgba(126, 217, 87, 0.35);
   background: rgba(20, 26, 18, 0.7);
   box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+
+.commands-panel.expanded {
+  position: fixed;
+  inset: 24px 24px 90px 24px;
+  z-index: 30;
+  width: calc(100vw - 48px);
+  height: calc(100vh - 114px);
+  max-width: none;
+  flex-basis: auto;
+  aspect-ratio: auto;
+  overflow-y: auto;
+  background: rgba(10, 17, 13, 0.96);
+  border-color: rgba(126, 217, 87, 0.8);
+  box-shadow: 0 0 0 1px rgba(126, 217, 87, 0.25), 0 28px 80px rgba(0, 0, 0, 0.7);
+}
+
+.close-command {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(126, 217, 87, 0.7);
+  border-radius: 50%;
+  background: rgba(10, 17, 13, 0.7);
+  color: #dfffdc;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  display: none;
+}
+
+.commands-panel.expanded .close-command {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.command-toggle {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  padding: 18px 20px 16px;
+  cursor: pointer;
+  text-align: left;
+  flex-shrink: 0;
 }
 
 .commands-header {
@@ -202,13 +298,19 @@ h1 span {
 }
 
 .command-list {
+  display: none;
   margin: 0;
-  padding-left: 18px;
+  padding: 0 20px 18px 38px;
   color: #edf0ea;
   font-family: "Courier New", monospace;
   font-size: 14px;
   line-height: 1.6;
   list-style: decimal;
+  overflow-y: auto;
+}
+
+.commands-panel.expanded .command-list {
+  display: block;
 }
 
 .command-list li + li {

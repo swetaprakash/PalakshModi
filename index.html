@@ -25,12 +25,135 @@
       <a class="scroll-cue" href="#about"><span class="scroll-line" aria-hidden="true"></span>Scroll to explore</a>
     </section>
 
+    <div class="commands-nav" aria-label="Command carousel controls">
+      <button class="carousel-btn prev" type="button" aria-label="Previous command">←</button>
+      <button class="carousel-btn next" type="button" aria-label="Next command">→</button>
+    </div>
+
     <div class="commands-carousel" aria-label="Minecraft command cards">
-      <section class="commands-panel" aria-labelledby="commands-title">
-        <div class="commands-header">
-          <span class="commands-badge">The fang sword</span>
-          <span class="commands-steps">1st</span>
-        </div>
+      <section class="commands-panel collapsed" aria-labelledby="commands-title">
+        <button class="close-command" type="button" aria-label="Close command">×</button>
+        <button class="command-toggle" type="button" aria-expanded="false">
+          <span class="commands-header">
+            <span class="commands-badge">The Rapid Fire Crossbow</span>
+            <span class="commands-steps">1st</span>
+          </span>
+        </button>
+
+        <a href="https://www.youtube.com/watch?v=T-hebRqb-DM&t=12s" target="_blank" rel="noopener noreferrer" class="commands-link">https://www.youtube.com/watch?v=T-hebRqb-DM&t=12s</a>
+
+        <ol class="command-list">
+          <li>execute at @p[tag=CrossBro] run structure load Crossbow ~ ~ ~ 0_degrees none true true</li>
+          <li>execute as @e[type=arrow] run clear @p[tag=CrossBro] crossbow</li>
+        </ol>
+      </section>
+
+      <section class="commands-panel collapsed" aria-labelledby="commands-title-2">
+        <button class="close-command" type="button" aria-label="Close command">×</button>
+        <button class="command-toggle" type="button" aria-expanded="false">
+          <span class="commands-header">
+            <span class="commands-badge">The Lightning Sword</span>
+            <span class="commands-steps">2nd</span>
+          </span>
+        </button>
+
+        <a href="https://www.youtube.com/watch?v=bVKA2SgIKjo&t=16s" target="_blank" rel="noopener noreferrer" class="commands-link">https://www.youtube.com/watch?v=bVKA2SgIKjo&t=16s</a>
+
+        <ol class="command-list">
+          <li>execute as @a[hasitem=[{item=netherite_sword,location=slot.weapon.mainhand},{item=netherite_sword,location=slot.weapon.mainhand,data=0,quantity=0}]] at @s rotated ~ 0 run summon lightning_bolt ^^^3</li>
+          <li>execute as @a[hasitem=[{item=netherite_sword,location=slot.weapon.mainhand},{item=netherite_sword,location=slot.weapon.mainhand,data=0,quantity=0}]] at @s run effect @s resistance 8 5 true</li>
+          <li>replaceitem entity @a[hasitem=[{item=netherite_sword,location=slot.weapon.mainhand},{item=netherite_sword,location=slot.weapon.mainhand,data=0,quantity=0}]] slot.weapon.mainhand 0 netherite_sword</li>
+        </ol>
+      </section>
+
+      <section class="commands-panel collapsed" aria-labelledby="commands-title-3">
+        <button class="close-command" type="button" aria-label="Close command">×</button>
+        <button class="command-toggle" type="button" aria-expanded="false">
+          <span class="commands-header">
+            <span class="commands-badge">The Poison Shield</span>
+            <span class="commands-steps">3rd</span>
+          </span>
+        </button>
+
+        <a href="https://www.youtube.com/watch?v=n6yxtOo-FVc&t=6s" target="_blank" rel="noopener noreferrer" class="commands-link">https://www.youtube.com/watch?v=n6yxtOo-FVc&t=6s</a>
+
+        <ol class="command-list">
+          <li>replaceitem entity YourName slot.weapon.offhand 0 keep shield 1 9999</li>
+          <li>execute as @a[hasitem=[{item=shield,location=slot.weapon.offhand},{item=shield,location=slot.weapon.offhand,data=0,quantity=0}]] at @s as @e[r=3,c=1,type=!player] run effect @s fatal_poison 5 10 true</li>
+          <li>execute as @a[hasitem=[{item=shield,location=slot.weapon.offhand},{item=shield,location=slot.weapon.offhand,data=0,quantity=0}]] at @s as @e[r=3,c=1,type=!player] run effect @s slowness 3 3 true</li>
+          <li>execute as @a[hasitem=[{item=shield,location=slot.weapon.offhand},{item=shield,location=slot.weapon.offhand,data=0,quantity=0}]] at @s as @e[r=3,c=1,type=!player] run effect @s nausea 10 5 true</li>
+          <li>execute as @a[hasitem=[{item=shield,location=slot.weapon.offhand},{item=shield,location=slot.weapon.offhand,data=0,quantity=0}]] at @s as @e[r=3,c=1,type=!player] run effect @s weakness 10 5 true</li>
+        </ol>
+      </section>
+
+      <section class="commands-panel collapsed" aria-labelledby="commands-title-4">
+        <button class="close-command" type="button" aria-label="Close command">×</button>
+        <button class="command-toggle" type="button" aria-expanded="false">
+          <span class="commands-header">
+            <span class="commands-badge">The Poison Sword</span>
+            <span class="commands-steps">4th</span>
+          </span>
+        </button>
+
+        <a href="https://www.youtube.com/watch?v=Pebtk-022y4" target="_blank" rel="noopener noreferrer" class="commands-link">https://www.youtube.com/watch?v=Pebtk-022y4</a>
+
+        <ol class="command-list">
+          <li>testfor @e[type=arrow]</li>
+          <li>execute at @e[type=arrow] run summon ender_crystal ~ ~ ~ ~ ~ minecraft:crystal_explode</li>
+          <li>kill @e[type=arrow]</li>
+        </ol>
+      </section>
+
+      <section class="commands-panel collapsed" aria-labelledby="commands-title-5">
+        <button class="close-command" type="button" aria-label="Close command">×</button>
+        <button class="command-toggle" type="button" aria-expanded="false">
+          <span class="commands-header">
+            <span class="commands-badge">The Penance Stare</span>
+            <span class="commands-steps">5th</span>
+          </span>
+        </button>
+
+        <a href="https://www.youtube.com/watch?v=JNDbsC68ePA&t=35s" target="_blank" rel="noopener noreferrer" class="commands-link">https://www.youtube.com/watch?v=JNDbsC68ePA&t=35s</a>
+
+        <ol class="command-list">
+          <li>execute as @a[hasitem=[{item=copper_sword,location=slot.weapon.mainhand},{item=copper_sword,location=slot.weapon.mainhand,data=0,quantity=0}]] at @s as @e[r=3,type=!player] run effect @s fatal_poison 10 5 true</li>
+          <li>replaceitem entity @a[hasitem=[{item=copper_sword,location=slot.weapon.mainhand},{item=copper_sword,location=slot.weapon.mainhand,data=0,quantity=0}]] slot.weapon.mainhand 0 copper_sword</li>
+        </ol>
+      </section>
+
+      <section class="commands-panel collapsed" aria-labelledby="commands-title-rocket">
+        <button class="close-command" type="button" aria-label="Close command">×</button>
+        <button class="command-toggle" type="button" aria-expanded="false">
+          <span class="commands-header">
+            <span class="commands-badge">The Rocket Boots</span>
+            <span class="commands-steps">6th</span>
+          </span>
+        </button>
+
+        <a href="https://www.youtube.com/watch?v=M4SeD3eUhIg" target="_blank" rel="noopener noreferrer" class="commands-link">https://www.youtube.com/watch?v=M4SeD3eUhIg</a>
+
+        <ol class="command-list">
+          <li>1st</li>
+          <li>execute as @a at @s if entity @s[hasitem={item=netherite_boots,location=slot.armor.feet}] positioned ~ ~1.5 ~ unless entity @s[dy=0] run effect @s levitation 1 5 true</li>
+          <li>2nd</li>
+          <li>execute as @a at @s if entity @s[hasitem={item=netherite_boots,location=slot.armor.feet}] positioned ~ ~-1.5 ~ unless entity @s[dx=0] run particle minecraft:egg_destroy_emitter ~ ~1 ~</li>
+          <li>3rd</li>
+          <li>execute as @a at @s if entity @s[hasitem={item=netherite_boots,location=slot.armor.feet}] positioned ~ ~-1.5 ~ unless entity @s[dx=0] run particle minecraft:basic_flame_particle ~ ~1.7 ~</li>
+          <li>4th</li>
+          <li>execute as @a at @s if entity @s[hasitem={item=netherite_boots,location=slot.armor.feet}] positioned ~ ~-1.5 ~ unless entity @s[dx=0] run playsound mob.ghast.fireball @s ~ ~ ~</li>
+        </ol>
+      </section>
+
+      <section class="commands-panel collapsed" aria-labelledby="legacy-commands-title-1">
+        <button class="close-command" type="button" aria-label="Close command">×</button>
+        <button class="command-toggle" type="button" aria-expanded="false">
+          <span class="commands-header">
+            <span class="commands-badge">The Fang Sword</span>
+            <span class="commands-steps">7th</span>
+          </span>
+        </button>
+
+        <a href="https://www.youtube.com/watch?v=0cruPYoCL98" target="_blank" rel="noopener noreferrer" class="commands-link">https://www.youtube.com/watch?v=0cruPYoCL98</a>
 
         <ol class="command-list">
           <li>execute as @a[hasitem=[{item=netherite_sword,location=slot.weapon.mainhand},{item=netherite_sword,location=slot.weapon.mainhand,data=0,quantity=0}]] at @s run tag @e[r=4,c=3,type=!player,type=!xp_orb,type=!item] add fanged</li>
@@ -43,11 +166,16 @@
         </ol>
       </section>
 
-      <section class="commands-panel" aria-labelledby="commands-title-2">
-        <div class="commands-header">
-          <span class="commands-badge">The Sonic Bow</span>
-          <span class="commands-steps">2nd</span>
-        </div>
+      <section class="commands-panel collapsed" aria-labelledby="legacy-commands-title-2">
+        <button class="close-command" type="button" aria-label="Close command">×</button>
+        <button class="command-toggle" type="button" aria-expanded="false">
+          <span class="commands-header">
+            <span class="commands-badge">The Sonic Bow</span>
+            <span class="commands-steps">8th</span>
+          </span>
+        </button>
+
+        <a href="https://www.youtube.com/watch?v=MKdECJsgKzY&t=71s" target="_blank" rel="noopener noreferrer" class="commands-link">https://www.youtube.com/watch?v=MKdECJsgKzY&t=71s</a>
 
         <ol class="command-list">
           <li>execute at @e[type=arrow] run particle minecraft:sonic_explosion</li>
@@ -57,11 +185,16 @@
         </ol>
       </section>
 
-      <section class="commands-panel" aria-labelledby="commands-title-3">
-        <div class="commands-header">
-          <span class="commands-badge">The Ice Bow</span>
-          <span class="commands-steps">3rd</span>
-        </div>
+      <section class="commands-panel collapsed" aria-labelledby="legacy-commands-title-3">
+        <button class="close-command" type="button" aria-label="Close command">×</button>
+        <button class="command-toggle" type="button" aria-expanded="false">
+          <span class="commands-header">
+            <span class="commands-badge">The Ice Bow</span>
+            <span class="commands-steps">9th</span>
+          </span>
+        </button>
+
+        <a href="https://www.youtube.com/watch?v=cgFEhGOrn0Q&t=10s" target="_blank" rel="noopener noreferrer" class="commands-link">https://www.youtube.com/watch?v=cgFEhGOrn0Q&t=10s</a>
 
         <ol class="command-list">
           <li>testfor @e[type=arrow]</li>
@@ -70,11 +203,16 @@
         </ol>
       </section>
 
-      <section class="commands-panel" aria-labelledby="commands-title-4">
-        <div class="commands-header">
-          <span class="commands-badge">The Explosive Bow</span>
-          <span class="commands-steps">4th</span>
-        </div>
+      <section class="commands-panel collapsed" aria-labelledby="legacy-commands-title-4">
+        <button class="close-command" type="button" aria-label="Close command">×</button>
+        <button class="command-toggle" type="button" aria-expanded="false">
+          <span class="commands-header">
+            <span class="commands-badge">The Explosive Bow</span>
+            <span class="commands-steps">10th</span>
+          </span>
+        </button>
+
+        <a href="https://www.youtube.com/watch?v=QLKxMb9xct4" target="_blank" rel="noopener noreferrer" class="commands-link">https://www.youtube.com/watch?v=QLKxMb9xct4</a>
 
         <ol class="command-list">
           <li>testfor @e[type=arrow]</li>
@@ -83,21 +221,174 @@
         </ol>
       </section>
 
-      <section class="commands-panel" aria-labelledby="commands-title-5">
-        <div class="commands-header">
-          <span class="commands-badge">Penance Stare</span>
-          <span class="commands-steps">5th</span>
-        </div>
+      <section class="commands-panel collapsed" aria-labelledby="commands-title-snow-gap-filler">
+        <button class="close-command" type="button" aria-label="Close command">×</button>
+        <button class="command-toggle" type="button" aria-expanded="false">
+          <span class="commands-header">
+            <span class="commands-badge">The Snow Ball Gap Filler</span>
+            <span class="commands-steps">11th</span>
+          </span>
+        </button>
+
+        <a href="https://www.youtube.com/watch?v=LV9P29W1go8" target="_blank" rel="noopener noreferrer" class="commands-link">https://www.youtube.com/watch?v=LV9P29W1go8</a>
 
         <ol class="command-list">
-          <li>execute as @a[hasitem={item=ender_eye,location=slot.weapon.mainhand}] at @s anchored eyes positioned ^ ^-1 ^1 run tag @e[r=1,c=1,type=!player] add penance</li>
-          <li>execute as @e[tag=penance] run effect @s blindness 1 10 true</li>
-          <li>execute as @e[tag=penance] run effect @s slowness 1 100 true</li>
-          <li>execute as @e[tag=penance] run effect @s instant_damage 1 0 true</li>
-          <li>tag @e[tag=penance] remove penance</li>
+          <li>execute at @e[type=snowball] run fill ~3 -1 ~3 ~-3 -4 ~-3 grass_block</li>
+          <li>execute at @e[type=snowball] run fill ~3 -5 ~3 ~-3 -10 ~-3 stone</li>
         </ol>
       </section>
+
+      <section class="commands-panel collapsed" aria-labelledby="commands-title-quicksand">
+        <button class="close-command" type="button" aria-label="Close command">×</button>
+        <button class="command-toggle" type="button" aria-expanded="false">
+          <span class="commands-header">
+            <span class="commands-badge">The Quicksand</span>
+            <span class="commands-steps">12th</span>
+          </span>
+        </button>
+
+        <a href="https://www.youtube.com/watch?v=nuv3eTxbtJo&t=83s" target="_blank" rel="noopener noreferrer" class="commands-link">https://www.youtube.com/watch?v=nuv3eTxbtJo&t=83s</a>
+
+        <ol class="command-list">
+          <li>execute as @a at @s if block ~ ~-2 ~ cobweb if block ~ ~-1 ~ suspicious_sand run tp @s ~ ~-.1 ~</li>
+          <li>execute as @a at @a if block ~ ~ ~ cobweb if block ~ ~1 ~ suspicious_sand run damage @s 1 minecraft:in_wall</li>
+          <li>execute as @a at @a if block ~ ~ ~ cobweb if block ~ ~1 ~ suspicious_sand run effect give @s minecraft:mining_fatigue 1 1 true</li>
+        </ol>
+      </section>
+
+      <section class="commands-panel collapsed" aria-labelledby="commands-title-grappling-hook">
+        <button class="close-command" type="button" aria-label="Close command">×</button>
+        <button class="command-toggle" type="button" aria-expanded="false">
+          <span class="commands-header">
+            <span class="commands-badge">The Grappling Hook</span>
+            <span class="commands-steps">13th</span>
+          </span>
+        </button>
+
+        <a href="https://www.youtube.com/watch?v=nuv3eTxbtJo&t=83s" target="_blank" rel="noopener noreferrer" class="commands-link">https://www.youtube.com/watch?v=nuv3eTxbtJo&t=83s</a>
+
+        <ol class="command-list">
+          <li>execute at @e[type=minecraft:fishing_bobber] unless block ~ ~-.5 ~ air at @p anchored feet if block ^ ^1 ^1 air run tp @p[nbt={SelectedItem:{id:"minecraft:fishing_rod",components:{"minecraft:custom_name":"\"Grappling Hook\""}}}] ^ ^ ^1 facing entity @e[type=fishing_bobber,limit=1,sort=nearest]</li>
+          <li>execute at @a[nbt={SelectedItem:{id:"minecraft:fishing_rod",components:{"minecraft:custom_name":"\"Grappling Hook\""}}}] if entity @e[type=minecraft:fishing_bobber,distance=..1] run tp @p ~ ~1 ~ facing ^ ^-1 ^1</li>
+          <li>execute at @p[nbt={SelectedItem:{id:"minecraft:fishing_rod",components:{"minecraft:custom_name":"\"Grappling Hook\""}}}] run kill @e[type=fishing_bobber,distance=..1.1,sort=nearest,limit=1]</li>
+          <li>execute at @p[nbt={SelectedItem:{id:"minecraft:fishing_rod",components:{"minecraft:custom_name":"\"Grappling Hook\""}}}] anchored feet unless block ^ ^1 ^1 air run kill @e[type=fishing_bobber,distance=..40,sort=nearest,limit=1]</li>
+        </ol>
+      </section>
+
+      <section class="commands-panel collapsed" aria-labelledby="commands-title-pentagram-trails">
+        <button class="close-command" type="button" aria-label="Close command">×</button>
+        <button class="command-toggle" type="button" aria-expanded="false">
+          <span class="commands-header">
+            <span class="commands-badge">Pentagram Trails</span>
+            <span class="commands-steps">14th</span>
+          </span>
+        </button>
+
+        <a href="https://www.youtube.com/watch?v=k6Kir33lmsg" target="_blank" rel="noopener noreferrer" class="commands-link">https://www.youtube.com/watch?v=k6Kir33lmsg</a>
+
+        <ol class="command-list">
+          <li>execute as @e[name=a] at @s run tp ~ ~ ~ ~8</li>
+          <li>execute as @e[name=b] at @s run tp ~ ~ ~ ~-12</li>
+          <li>execute as @a at @s rotated as @e[name=a] positioned ^ ^ ^0.6 rotated as @e[name=b] run particle minecraft:lava_drip_particle ^ ^ ^0.3</li>
+          <li>execute as @a at @s rotated as @e[name=b] run particle minecraft:lava_drip_particle ^ ^ ^0.8</li>
+        </ol>
+      </section>
+
+      <section class="commands-panel collapsed" aria-labelledby="commands-title-smoke-grenade">
+        <button class="close-command" type="button" aria-label="Close command">×</button>
+        <button class="command-toggle" type="button" aria-expanded="false">
+          <span class="commands-header">
+            <span class="commands-badge">Smoke Grenade</span>
+            <span class="commands-steps">15th</span>
+          </span>
+        </button>
+
+        <a href="https://www.youtube.com/watch?v=rfpIKD1NaaE" target="_blank" rel="noopener noreferrer" class="commands-link">https://www.youtube.com/watch?v=rfpIKD1NaaE</a>
+
+        <ol class="command-list">
+          <li>execute @e[type=ender_pearl] ~ ~ ~ effect invisibility 1 1 true</li>
+          <li>execute ~ ~ ~ particle minecraft:huge_explosion_lab_misc_emitter ~ ~ ~</li>
+          <li>give ender_pearl</li>
+        </ol>
+      </section>
+
+      <section class="commands-panel collapsed" aria-labelledby="commands-title-laser-blast">
+        <button class="close-command" type="button" aria-label="Close command">×</button>
+        <button class="command-toggle" type="button" aria-expanded="false">
+          <span class="commands-header">
+            <span class="commands-badge">Laser Blast</span>
+            <span class="commands-steps">16th</span>
+          </span>
+        </button>
+
+        <a href="https://www.youtube.com/watch?v=L05GrIQOOHM" target="_blank" rel="noopener noreferrer" class="commands-link">https://www.youtube.com/watch?v=L05GrIQOOHM</a>
+
+        <ol class="command-list">
+          <li>execute as @a at @s if entity @e[type=fishing_hook, r=3] run summon armor_stand ~ ~ ~ facing ^ ^ ^1 named laser</li>
+          <li>execute as @a at @s if entity @e[type=fishing_hook, r=3] run summon armor_stand ~ ~ ~ facing ^ ^ ^-1 named laser</li>
+          <li>execute as @a at @s if entity @e[type=fishing_hook, r=3] run playsound mob.warden.sonic_boom @a</li>
+          <li>execute as @a at @s anchored eyes positioned ^ ^ ^65 rotated as @e[name=laser] positioned ^ ^ ^0.25 rotated as @e[name=laser] positioned ^ ^ ^0.5 rotated as @e[name=laser] positioned ^ ^ ^1 rotated as @e[name=laser] positioned ^ ^ ^2 rotated as @e[name=laser] positioned ^ ^ ^4 rotated as @e[name=laser] positioned ^ ^ ^8 rotated as @e[name=laser] positioned ^ ^ ^16 rotated as @e[name=laser] positioned ^ ^ ^32 run particle minecraft:dragon_destroy_block</li>
+          <li>execute as @a at @s anchored eyes positioned ^ ^ ^64 rotated as @e[name=laser] positioned ^ ^ ^0.25 rotated as @e[name=laser] positioned ^ ^ ^0.5 rotated as @e[name=laser] positioned ^ ^ ^1 rotated as @e[name=laser] positioned ^ ^ ^2 rotated as @e[name=laser] positioned ^ ^ ^4 rotated as @e[name=laser] positioned ^ ^ ^8 rotated as @e[name=laser] positioned ^ ^ ^16 rotated as @e[name=laser] positioned ^ ^ ^32 run damage @e[family=mob, r=2.25] 40</li>
+          <li>kill @e[name=laser]</li>
+          <li>kill @e[type=fishing_hook]</li>
+        </ol>
+      </section>
+
     </div>
+
+    <script>
+      const carousel = document.querySelector('.commands-carousel');
+      const prevBtn = document.querySelector('.carousel-btn.prev');
+      const nextBtn = document.querySelector('.carousel-btn.next');
+      const panels = document.querySelectorAll('.commands-panel');
+
+      if (carousel && prevBtn && nextBtn) {
+        const cardStep = () => {
+          const firstPanel = panels[0];
+          if (!firstPanel) return 0;
+          const styles = window.getComputedStyle(carousel);
+          const gap = parseFloat(styles.columnGap || styles.gap || '0') || 0;
+          const width = firstPanel.getBoundingClientRect().width;
+          return (width * 3) + (gap * 2);
+        };
+
+        prevBtn.addEventListener('click', () => {
+          carousel.scrollTo({ left: carousel.scrollLeft - cardStep(), behavior: 'smooth' });
+        });
+
+        nextBtn.addEventListener('click', () => {
+          carousel.scrollTo({ left: carousel.scrollLeft + cardStep(), behavior: 'smooth' });
+        });
+      }
+
+      panels.forEach((panel) => {
+        const button = panel.querySelector('.command-toggle');
+        const closeButton = panel.querySelector('.close-command');
+        if (!button) return;
+
+        button.addEventListener('click', () => {
+          const isOpen = panel.classList.contains('expanded');
+          panels.forEach((other) => {
+            other.classList.remove('expanded');
+            const otherButton = other.querySelector('.command-toggle');
+            if (otherButton) otherButton.setAttribute('aria-expanded', 'false');
+          });
+
+          if (!isOpen) {
+            panel.classList.add('expanded');
+            button.setAttribute('aria-expanded', 'true');
+          }
+        });
+
+        if (closeButton) {
+          closeButton.addEventListener('click', (event) => {
+            event.stopPropagation();
+            panel.classList.remove('expanded');
+            button.setAttribute('aria-expanded', 'false');
+          });
+        }
+      });
+    </script>
 
     <section class="about" id="about" aria-labelledby="about-title">
       <p class="section-label">A LITTLE ABOUT THIS SPACE</p>

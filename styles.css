@@ -308,8 +308,8 @@ h1 span {
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
-  margin: 0 14px 12px;
-  min-height: 250px;
+  margin: 0 14px 0;
+  min-height: 0;
   border: 3px solid rgba(126, 217, 87, 0.75);
   border-radius: 0;
   background: linear-gradient(180deg, rgba(14, 19, 15, 0.98), rgba(8, 11, 10, 0.98));
@@ -329,8 +329,8 @@ h1 span {
   display: block;
   width: 100%;
   flex: 1 1 auto;
-  min-height: 200px;
-  height: 100%;
+  min-height: 170px;
+  height: 0;
   object-fit: cover;
   background: #0b100d;
   filter: saturate(1.2) contrast(1.08);
@@ -339,6 +339,7 @@ h1 span {
 
 .commands-link-copy {
   display: flex;
+  flex: 0 0 auto;
   flex-direction: column;
   gap: 5px;
   padding: 10px 12px 11px;

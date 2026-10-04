@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10130f">
+  <meta name="description" content="A little corner of the internet belonging to Palaksh Modi.">
+  <title>Palaksh Modi — A little corner of the internet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="site-shell" id="home">
+    <span class="corner-orbit corner-orbit-left" aria-hidden="true"></span>
+    <span class="corner-orbit corner-orbit-right" aria-hidden="true"></span>
+
+    <section class="hero" aria-labelledby="profile-name">
+      <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>A little corner of the internet</p>
+      <h1 id="profile-name"><span>Palaksh Modi</span></h1>
+      <div class="minecraft-block" aria-label="Minecraft Commands">
+        <span class="minecraft-text">Minecraft Commands</span>
+      </div>
+      <a class="scroll-cue" href="#about"><span class="scroll-line" aria-hidden="true"></span>Scroll to explore</a>
+    </section>
+
+    <div class="commands-carousel" aria-label="Minecraft command cards">
+      <section class="commands-panel" aria-labelledby="commands-title">
+        <div class="commands-header">
+          <span class="commands-badge">The fang sword</span>
+          <span class="commands-steps">1st</span>
+        </div>
+
+        <ol class="command-list">
+          <li>execute as @a[hasitem=[{item=netherite_sword,location=slot.weapon.mainhand},{item=netherite_sword,location=slot.weapon.mainhand,data=0,quantity=0}]] at @s run tag @e[r=4,c=3,type=!player,type=!xp_orb,type=!item] add fanged</li>
+          <li>execute as @e[tag=fanged] at @s run playsound mob.evocation_illager.prepare_summon @a</li>
+          <li>execute as @e[tag=fanged] at @s run playsound mob.evocation_illager.cast_spell @a</li>
+          <li>execute as @e[tag=fanged] at @s run summon evocation_fang ~ ~ ~</li>
+          <li>execute as @e[tag=fanged] run effect @s slowness 3 2 true</li>
+          <li>replaceitem entity @a[hasitem=[{item=netherite_sword,location=slot.weapon.mainhand},{item=netherite_sword,location=slot.weapon.mainhand,data=0,quantity=0}]] slot.weapon.mainhand 0 netherite_sword</li>
+          <li>tag @e[tag=fanged] remove fanged</li>
+        </ol>
+      </section>
+
+      <section class="commands-panel" aria-labelledby="commands-title-2">
+        <div class="commands-header">
+          <span class="commands-badge">The Sonic Bow</span>
+          <span class="commands-steps">2nd</span>
+        </div>
+
+        <ol class="command-list">
+          <li>execute at @e[type=arrow] run particle minecraft:sonic_explosion</li>
+          <li>execute at @e[type=arrow] run playsound mob.warden.sonic_boom @p</li>
+          <li>execute at @e[type=arrow] run kill @e[r=5, type=!arrow]</li>
+          <li>kill @e[type=arrow]</li>
+        </ol>
+      </section>
+
+      <section class="commands-panel" aria-labelledby="commands-title-3">
+        <div class="commands-header">
+          <span class="commands-badge">The Ice Bow</span>
+          <span class="commands-steps">3rd</span>
+        </div>
+
+        <ol class="command-list">
+          <li>testfor @e[type=arrow]</li>
+          <li>execute at @e[type=arrow] run fill ~1 ~2 ~1 ~-1 ~ ~-1 ice</li>
+          <li>kill @e[type=arrow]</li>
+        </ol>
+      </section>
+
+      <section class="commands-panel" aria-labelledby="commands-title-4">
+        <div class="commands-header">
+          <span class="commands-badge">The Explosive Bow</span>
+          <span class="commands-steps">4th</span>
+        </div>
+
+        <ol class="command-list">
+          <li>testfor @e[type=arrow]</li>
+          <li>execute at @e[type=arrow] run summon ender_crystal ~ ~ ~ ~ ~ minecraft:crystal_explode</li>
+          <li>kill @e[type=arrow]</li>
+        </ol>
+      </section>
+
+      <section class="commands-panel" aria-labelledby="commands-title-5">
+        <div class="commands-header">
+          <span class="commands-badge">Penance Stare</span>
+          <span class="commands-steps">5th</span>
+        </div>
+
+        <ol class="command-list">
+          <li>execute as @a[hasitem={item=ender_eye,location=slot.weapon.mainhand}] at @s anchored eyes positioned ^ ^-1 ^1 run tag @e[r=1,c=1,type=!player] add penance</li>
+          <li>execute as @e[tag=penance] run effect @s blindness 1 10 true</li>
+          <li>execute as @e[tag=penance] run effect @s slowness 1 100 true</li>
+          <li>execute as @e[tag=penance] run effect @s instant_damage 1 0 true</li>
+          <li>tag @e[tag=penance] remove penance</li>
+        </ol>
+      </section>
+    </div>
+
+    <section class="about" id="about" aria-labelledby="about-title">
+      <p class="section-label">A LITTLE ABOUT THIS SPACE</p>
+      <h2 id="about-title">A place to make the internet feel a little more <span>personal.</span></h2>
+      <p class="about-copy">Thanks for stopping by. This is my small corner of the web — more to come soon.</p>
+      <a class="back-link" href="#home">Back to the top <span aria-hidden="true">↑</span></a>
+    </section>
+
+    <footer class="footer">
+      <a class="footer-mark" href="#home" aria-label="Palaksh Modi, back to top">PM<span>.</span></a>
+      <p>Made with care by Palaksh Modi.</p>
+      <span class="footer-note">A LITTLE CORNER OF THE INTERNET</span>
+    </footer>
+  </main>
+</body>
+</html>

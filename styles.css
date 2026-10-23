@@ -206,10 +206,10 @@ h1 span {
   border-radius: 10px;
 }
 
-.minecraft-farms-heading {
+.commands-subheading {
   position: relative;
   z-index: 1;
-  margin: 6px auto 0;
+  margin: 0 auto 12px;
   padding: 0 24px;
   color: #dfffdc;
   font-family: var(--mono);
